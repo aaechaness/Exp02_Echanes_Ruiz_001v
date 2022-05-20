@@ -306,6 +306,62 @@ header .intro-text {
 	padding-bottom: 30px;
 	text-align: center;
 }
+
+/*------------------------registro Section */
+#registro {
+	color: #fff;
+	background: #444 url(../img/reg.jpg) center top no-repeat fixed;
+	background-size: cover;
+}
+#registro .overlay {
+	padding: 120px 0 80px 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+#registro h2, #team p {
+	color: #fff;
+}
+#registro hr {
+	background: #fff;
+}
+#registro h3 {
+	color: #fff;
+	font-weight: 400;
+	font-size: 20px;
+	margin: 5px 0;
+}
+#registro img {
+	width: 280px;
+}
+#registro .thumbnail {
+	background: transparent;
+	border: 0;
+}
+#registro .thumbnail .team-img {
+	display: inline-block;
+	position: relative;
+}
+#registro .thumbnail .team-img:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	bottom: 8px;
+	left: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#registro .thumbnail .caption {
+	padding-top: 10px;
+}
+#registro .thumbnail .caption p {
+	color: rgba(255,255,255,0.7);
+	padding: 0 10px;
+	font-size: 15px;
+}
+/*------------------------registro Section */
+
+
+
 ul.cat li {
 	display: inline-block;
 }
@@ -616,3 +672,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#779936', end
 #footer a:hover {
 	color: #333;
 }
+
+
+/*----------------------------------------------------------------------------- VIDEO*/
+
+.video-responsive {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	position: relative;
+	}
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	}
+
+
+/*----------------------------------------------------------------------------- CARRUSEL*/
+	
