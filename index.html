@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jardin Botanico</title>
+<title>TEST.Jardin Botanico</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -50,13 +50,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about" class="page-scroll">Quienes Somos</a></li>
-        <li><a href="#Agregar" class="page-scroll">Para Agregar algo</a></li>
         <li><a href="#portfolio" class="page-scroll">Galeria</a></li>
         <li><a href="#team" class="page-scroll">Integrantes</a></li>
         <li><a href="#call-reservation" class="page-scroll">Contacto</a></li>
+        <li><a href="#registro" class="page-scroll">Registrate</a></li>
       </ul>
     </div>
-    <!-- /.navbar-collapse --> 
+<!-- /.navbar-collapse --> 
   </div>
 </nav>
 <!-- Header -->
@@ -135,16 +135,12 @@
 
 
 
-
-<!-- Para agregar algun extra o se elimina Section -->
-<div id="#Agregar">
- 
-</div>
+  
 
 
 
 
-<!-- Sección de Portafolio -->
+<!--------------------------------------------------------------------- GALERIA -->
 <div id="portfolio">
   <div class="section-title text-center center">
     <div class="overlay">
@@ -424,7 +420,7 @@
     </div>
   </div>
 </div>
-<!-- Team Section -->
+<!--------------------------------------------------------------------- Team Section -->
 <div id="team" class="text-center">
   <div class="overlay">
     <div class="container">
@@ -462,13 +458,13 @@
     </div>
   </div>
 </div>
-<!-- Sección de reserva de llamadas -->
+<!--------------------------------------------------------------------- Sección de reserva de llamadas -->
 <div id="call-reservation" class="text-center">
   <div class="container">
     <h2>Quieres visitarnos? llamanos al <strong>9 8765 4321</strong></h2>
   </div>
 </div>
-<!-- Sección de contacto -->
+<!--------------------------------------------------------------------- Sección de contacto -->
 <div id="contact" class="text-center">
   <div class="container">
     <div class="section-title text-center">
@@ -502,6 +498,62 @@
     </div>
   </div>
 </div>
+<!--------------------------------------------------------------------- REGISTRATE ---------------------------------------------------------------------------------------------->
+<div id="registro">
+  <div class="section-title text-center center">
+    <div class="overlay">
+      <h2>REGISTRATE</h2>
+    </div>
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title text-center">
+      <p>Registrese Para obtener mejores beneficios</p>
+    </div>
+    <div class="col-md-10 col-md-offset-1">
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Nombre" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Correo" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Direccion" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <select type="pais" id="pais" class="form-control" placeholder="Pais" required="required">
+                  <option value="alb">Chile</option>
+                  <option value="and">Argentina</option>
+                  <option value="aus">Brasil</option>
+                  <option value="sp">Mexico</option></select>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-custom btn-lg">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!--------------------------------------------------------------------- FOOTER -->
 <div id="footer">
   <div class="container text-center">
     <div class="col-md-4">
@@ -535,11 +587,12 @@
           <li><a href="#"><i class="inicio"></i></a></li>
         </ul>
       </div>
-      <p>&copy; @Copyrigth Derechos reservados. <a href="http://www.templatewire.com" rel="nofollow">Churretines S.A.</a></p>
+      <p>Jorge Ruiz / Alvaro Echanes 2022, @Copyrigth Derechos reservados. <a href="" rel="nofollow">Churretines S.A.</a></p>
     </div>
   </div>
 </div>
 
+<!--------------------------------------------------------------------- JavaScript -->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -551,7 +604,6 @@
             });
           });
         </script>
-
 
 <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
 <script type="text/javascript" src="js/bootstrap.js"></script> 
