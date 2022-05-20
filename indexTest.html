@@ -50,13 +50,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about" class="page-scroll">Quienes Somos</a></li>
-        <li><a href="#Agregar" class="page-scroll">Para Agregar algo</a></li>
         <li><a href="#portfolio" class="page-scroll">Galeria</a></li>
         <li><a href="#team" class="page-scroll">Integrantes</a></li>
         <li><a href="#call-reservation" class="page-scroll">Contacto</a></li>
+        <li><a href="#registro" class="page-scroll">Registrate</a></li>
       </ul>
     </div>
-    <!-- /.navbar-collapse --> 
+<!-- /.navbar-collapse --> 
   </div>
 </nav>
 <!-- Header -->
@@ -498,62 +498,154 @@
     </div>
   </div>
 </div>
-<!--------------------------------------------------------------------- REGISTRO ---------------------------------------------------------------------------------------------->
-<!-- Para agregar algun extra o se elimina Section -->
-<div id="Agregar">
+<!--------------------------------------------------------------------- REGISTRATE ---------------------------------------------------------------------------------------------->
+<script>	
+	function validarFormulario(){
+		var txtNombre = document.getElementById('nombre').value;
+		var txtEdad = document.getElementById('edad').value;
+		var txtCorreo = document.getElementById('correo').value;
+		var txtFecha = document.getElementById('fecha').value;
+		var cmbSelector = document.getElementById('selector').selectedIndex;
+		var chkEstado = document.getElementById('checkBox');
+		var rbtEstado = document.getElementsByName('radioButton');
+
+		var banderaRBTN = false;
+		//Test campo obligatorio
+		if(txtNombre == null || txtNombre.length == 0 || /^\s+$/.test(txtNombre)){
+			alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+			document.datos.nombre.focus();
+			return false;
+		}
+		//Test edad
+		if(txtEdad == null || txtEdad.length == 0 || isNaN(txtEdad)){
+			alert('ERROR: Debe ingresar una edad');
+			document.datos.edad.focus();
+			return false;
+		}
+		//Test correo
+		if(!(/\S+@\S+\.\S+/.test(txtCorreo))){
+			alert('ERROR: Debe escribir un correo válido');
+			document.datos.correo.value="";
+			document.datos.correo.focus();
+			return false;
+		}
+		//Test fecha
+		if(!isNaN(txtFecha)){
+			alert('ERROR: Debe elegir una fecha');
+			document.datos.fecha.focus();
+			return false;
+		}
+		//Test comboBox
+		if(cmbSelector == null || cmbSelector == 0){
+			alert('ERROR: Debe seleccionar una opcion del combo box');
+			document.datos.selector.focus();
+			return false;
+		}
+		//Test checkBox
+		if(!chkEstado.checked){
+			alert('ERROR: Debe seleccionar el checkbox');
+			return false;
+		}
+		//Test RadioButtons
+		for(var i = 0; i < rbtEstado.length; i++){
+			if(rbtEstado[i].checked){
+				banderaRBTN = true;
+				break;
+			}
+		}
+		if(!banderaRBTN){
+			alert('ERROR: Debe elegir una opción de radio button');
+			return false;
+		}
+		return true;
+	}
+</script>
+
+
+<div id="registro">
   <div class="section-title text-center center">
     <div class="overlay">
-      <h2>REGISTRO</h2>
-      <hr>
+      <h2>REGISTRATE</h2>
     </div>
- <!--------------------------------------------------------------------- CONTACTO -->
-<div id="contact" class="text-center">
-  <div class="container">
-    <div class="section-title text-center">
-      <h2>Formulario de Registro</h2>
-      <hr>
-      <p>Registrese Para obtener mejores beneficios</p>
-    </div>
-    <div class="col-md-10 col-md-offset-1">
-      <form name="sentMessage" id="contactForm" novalidate>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <input type="text" id="name" class="form-control" placeholder="Nombre" required="required">
-              <p class="help-block text-danger"></p>
+  <div id="contact" class="text-center">
+    <div class="container">
+      <div class="section-title text-center">
+        <p>Registrese Para obtener mejores beneficios</p>
+      </div>
+      <form name="datos" action="" onsubmit="return validarFormulario()"></form>
+      <div class="col-md-10 col-md-offset-1">
+        <form name="sentMessage" id="contactForm" novalidate>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--------- NOMBRE -->
+                <label for="nombre"></label>
+                <input type="text" id="name" class="form-control" placeholder="Nombre" required="required">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--------- CORREO -->
+                <input type="email" id="email" class="form-control" placeholder="Correo" required="required">
+                <p class="help-block text-danger"></p>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <input type="email" id="email" class="form-control" placeholder="Correo" required="required">
-              <p class="help-block text-danger"></p>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--------- EDAD -->
+                <input type="text" id="edad" class="form-control" placeholder="Edad" required="required">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--------- PAIS -->
+                <select type="selector" id="selector" class="form-control" placeholder="Pais" required="required">
+                    <option value="">Chile</option>
+                    <option value="1">Argentina</option>
+                    <option value="2">Brasil</option>
+                    <option value="3">Mexico</option></select>
+                <p class="help-block text-danger"></p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <input type="text" id="name" class="form-control" placeholder="Nombre" required="required">
-              <p class="help-block text-danger"></p>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--------- FECHA -->
+                <h3><label for="fecha">Fecha</label></h3>
+                <input type="date" id="fecha" class="form-control" placeholder="fecha" required="required">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <!--------- RadioBoton -->
+                <h3><label for="radioButton">Selecciona una opción:<br>
+                    <input type="radio" id="radioButton" name="radioButton"> Plantas Interior<br>
+                    <input type="radio" id="radioButton" name="radioButton"> Plantas Exterior<br>
+                    <input type="radio" id="radioButton" name="radioButton"> Accesorior
+                  </label></h3>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <input type="email" id="email" class="form-control" placeholder="Correo" required="required">
-              <p class="help-block text-danger"></p>
-            </div>
+
+          <div class="form-group">
+            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+            <p class="help-block text-danger"></p>
           </div>
-        </div>
-        <div class="form-group">
-          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
-          <p class="help-block text-danger"></p>
-        </div>
-        <div id="success"></div>
-        <button type="submit" class="btn btn-custom btn-lg">Enviar Mensaje</button>
-      </form>
+          
+          <button type="submit" class="btn btn-custom btn-lg"value="Submit">Enviar Mensaje</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 <!--------------------------------------------------------------------- FOOTER -->
 <div id="footer">
   <div class="container text-center">
@@ -588,7 +680,7 @@
           <li><a href="#"><i class="inicio"></i></a></li>
         </ul>
       </div>
-      <p>&copy; @Copyrigth Derechos reservados. <a href="http://www.templatewire.com" rel="nofollow">Churretines S.A.</a></p>
+      <p>Jorge Ruiz / Alvaro Echanes 2022, @Copyrigth Derechos reservados. <a href="" rel="nofollow">Churretines S.A.</a></p>
     </div>
   </div>
 </div>
